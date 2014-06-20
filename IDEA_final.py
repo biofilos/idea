@@ -7,10 +7,6 @@ import os
 import sys
 
 
-# Analysis to be run
-
-# In[2]:
-
 __metaclass__ = type
 class disorder:
     #Set names of things
@@ -79,16 +75,13 @@ class disorder:
         forgloomF = open(self.gloom_out,'a')
         for j in discrete.index:
             forgloomF.write('>'+discrete.ix[j].name+'\n')
-            #print('>',discrete.ix[j].name,file=forgloomF)
-            for i in discrete.ix[j].fillna('?'): forgloomF.write(i)#print(i,file=forgloomF,end="")
+            for i in discrete.ix[j].fillna('?'): forgloomF.write(i)
             forgloomF.write('\n')
-            #print('',file=forgloomF)
         forgloomF.close()
 
 
 # Run automation
 
-# In[3]:
 
 def runall(root):
     """
