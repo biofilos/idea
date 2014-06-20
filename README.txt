@@ -11,8 +11,6 @@ Summary of analysis
 5. Generate graphics (optional)
 ---------------------------------------------------
 Prerequisites
-EMBOSS (seqretsplit)
-Install for ubuntu: sudo apt-get install emboss
 IUPred (iupred)
 remember to set environment variables
 in bash:
