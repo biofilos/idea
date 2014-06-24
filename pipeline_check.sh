@@ -24,7 +24,7 @@ then
 	then
 		for((i=0;i<${#files[@]};++i))
 		do
-			rm ${files[$i]}.discrete ${files[$i]}.iupred.parse.final
+			rm ${files[$i]}.discrete ${files[$i]}.iupred.parse.final 2> /dev/null
 		done
 		echo $iupStatus
 		exit 0
