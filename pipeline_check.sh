@@ -1,6 +1,6 @@
 #!/bin/bash
 chmod +x *.{sh,pl}
-
+rm Iupred_exit_status 2> /dev/null
 prefiles=( `ls *.fa | sed 's/.aln.fa//'` )
 #Check if a tree exists for each alignment
 files=()
@@ -17,6 +17,20 @@ do
 	python2.7 IDEA_final.py ${files[$i]}
 done
 #Run Gloome
+if [ -e Iupred_exit_status ]
+then
+	iupStatus=( `cat Iupred_exit_status`)
+	if [ $iupStatus -gt 1 ]
+	then
+		for((i=0;i<${#files[@]};++i))
+		do
+			rm ${files[$i]}.discrete ${files[$i]}.iupred.parse.final
+		done
+		echo $iupStatus
+		exit 0
+	fi
+fi
+
 ./forgloom.sh
 #Generate heatmaps and plots from Gloome with -g flag
 while getopts ":g" opt; do
