@@ -1,3 +1,5 @@
+This code runs the analysis specified in [Ortiz et al.](https://academic.oup.com/gbe/article/5/3/504/583028) as part of my MSc degree
+
 How to run it:
 ./pipeline_check.sh will start the analysis
 by default, it will not generate any graphics, in order to activate graphics generation, run it as
