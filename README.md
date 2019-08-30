@@ -34,15 +34,13 @@ Perl Modules
 Python modules
 * Biopython
 * pandas
----------------------------------------------------
 ## Restrictions
-alignment files and their corresponding rooted tree files should reside on this directory.  
+Alignment files and their corresponding rooted tree files should reside on this directory.  
 The alignment file should be called <rootname>.aln.fa (Fasta) and the tree file <rootname>.aln.tre (Newick). This restriction was imposed, so that analysis of a large number of protein families can be automated.  
-### Other restrictions:
+### Other restrictions
 The names in both files should match (case-sensitive) (it is highly recommended to avoid special characters or spaces in sequence names. A script in the directory taxa_names was included to parse alignment from Genbank sequences)
 The tree file shouldn't have internal node names, or any annotation (the pipeline will try to remove bootstrap values) (Gloome's restriction).  
 The tree should be rooted (Gloome's restriction)  
----------------------------------------------------
 ## Output
 ### Directory contents:
 `done/`: gloome run files for finished analysis
